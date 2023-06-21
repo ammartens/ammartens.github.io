@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <head>
+        
+    </head>
+    <body>
+        <h1>Anagram Generator</h1>
+        <form id="anagram-form">
+            <input id="anagram-input" type="text">
+            <input type="submit">
+        </form>
+        <ul></ul>
+    </body>
+    <script>
+        (async function() {
+            const response = await fetch("https://raw.githubusercontent.com/redbo/scrabble/master/dictionary.txt");
+            const text = await response.text();
+            const words = text.split("\n")
+            const form = document.getElementById("anagram-form");
+            const input = document.getElementById("anagram-input");
+            const ul = document.querySelector("ul");
+            
+            form.onsubmit = function(event) {
+                event.preventDefault();
+                ul.innerHTML = "";
+
+                const userInput = input.value
+                const sortedInput = input.value.split("").sort().join().toLowerCase()
+
+                words.forEach((word) => {
+                    const sortedWord = word.split("").sort().join().toLowerCase()
+
+                    if (sortedInput === sortedWord) {
+                        const li = document.createElement("li");
+                        li.innerText = word;
+                        ul.appendChild(li);
+                    }
+                });
+            };
+        })();
+    </script>
+</html>

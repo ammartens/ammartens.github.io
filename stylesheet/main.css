@@ -1,11 +1,11 @@
-* {
+/* * {
   box-sizing: border-box;
 }
-
+*/
 body {
   text-align: center;
   background-color: #15222c;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Barlow", sans-serif;
   color: #c46506;
 }
 
@@ -29,18 +29,18 @@ body {
 }
 
 .form-box h1 {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  font-weight: lighter;
 }
 
-.anagram-input input[type="text"] {
+.input-field {
   width: 100%;
-  margin-bottom: 50%;
+  margin-bottom: 40px;
 }
 
 .submit-button {
   width: 100%;
-  display: flex;
-  justify-content: center;
+  margin-top: 20px;
 }
 
 .submit-button input[type="submit"] {

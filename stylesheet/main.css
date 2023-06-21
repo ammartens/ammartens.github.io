@@ -32,9 +32,9 @@ body {
   margin-bottom: 20px;
 }
 
-.anagram-input {
+.anagram-input input[type="text"] {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 50%;
 }
 
 .submit-button {
